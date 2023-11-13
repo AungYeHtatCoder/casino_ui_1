@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino UI</title>
+
+    <!-- custom css -->
+    <link href="./tailwind.css" type="text/css" rel="stylesheet"/>
+    <!-- font awesome cdn -->
+    <script src="https://kit.fontawesome.com/b829c5162c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="flex justify-center items-center overflow-hidden">
+
+        <div class="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 bg-black opacity-100 ">
+
+          <div class="fixed w-full md:w-1/2 lg:w-1/2 xl:w-1/3 overflow-hidden">
+            <!-- start navbar section -->
+           <div class=" flex justify-between align-center bg-black py-2">
+            <div class="flex justify-start align-center gap-2">
+              <button id="toggleSidebar"><i class="fa-solid fa-bars text-3xl text-white p-2"></i></button>
+              <img src="./img/logo-removebg-preview.png" class="w-[2.5rem] h-[2.5rem]" alt="">
+            </div>
+  
+            <div class="text-xs text-white flex justify-end align-center gap-2 py-2 ">
+              <button type="button" class="bg-blue-500 p-3 rounded-lg">လော့ဂ်အင်</button>
+              <button type="button" class="bg-red-600 p-3 rounded-lg">အကောင့်သစ်ဖွင့်ရန်</button>
+    
+              <div x-data="{ isOpen: false }" class="relative inline-block">
+                <button @click="isOpen = !isOpen" class="text-white">
+                    <img src="./img/flag.png" alt="Your Image" class="w-8 h-8 me-2 rounded-3xl shadow-lg">
+                </button>
+                
+    
+                <div x-show="isOpen" class="origin-top-right absolute w-32 right-0 mt-2 rounded-md shadow-lg bg-white ">
+                  <div class="py-1">
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">
+                      <div class="flex justify-start align-center gap-3">
+                        <img src="./img/flag.png" class="w-[1.5rem] h-[1.5rem] rounded-3xl" alt=""><p>Myanmar</p>
+                      </div>
+                    </a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">
+                        <div class="flex justify-start align-center gap-3">
+                            <img src="./img/english.jpg" class="w-[1.5rem] h-[1.5rem] rounded-3xl" alt=""><p>English</p>
+                        </div>
+                    </a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">
+                        <div class="flex justify-start align-center gap-3">
+                            <img src="./img/english.jpg" class="w-[1.5rem] h-[1.5rem] rounded-3xl" alt=""><p>English</p>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+
+
+           </div>
+           <!-- end navbar section -->
+
+           
+            <!-- Sidebar -->
+            <div class="fixed  h-full bg-gray-800 text-white text-sm transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto  pb-[300px] hidden"  id="sidebar">
+              <div class="w-full h-auto  p-5  bg-gradient-to-t from-blue-900 to-gray-900 flex justify-center align-center">
+                <p class="w-32 h-auto p-3 mt-5 bg-green-400 rounded-xl">ဂိမ်းအားလုံး</p>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://www.iw021.com/img/sy.c4be58ed.png" class="w-8 h-8 me-5" alt="">
+                  <p>ရှေ့စာမျက်နှာ</p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://www.iw021.com/img/cztx.b2a507e6.svg" class="w-8 h-8 me-5" alt="">
+                  <p>ငွေသွင်းရန်/ငွေထုတ်ရန်</p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://www.iw021.com/img/sy.c4be58ed.png" class="w-8 h-8 me-5" alt="">
+                  <p>Agent(အေးဂျင့်)</p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://www.iw021.com/img/sy.c4be58ed.png" class="w-8 h-8 me-5" alt="">
+                  <p>VIP</p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://www.iw021.com/img/hd.fbb7025e.svg" class="w-8 h-8 me-5" alt="">
+                  <p>ပရိုမိုးရှင်းများ</p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://www.iw021.com/img/hd.fbb7025e.svg" class="w-8 h-8 me-5" alt="">
+                  <p> Mission Task </p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://www.iw021.com/img/hd.fbb7025e.svg" class="w-8 h-8 me-5" alt="">
+                  <p>Welfare Center </p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://cf2.oigngns6zvx3.com/bucketimg/d2c43f95-1508-49de-8885-986c1755f36b.png" class="w-8 h-8 me-5" alt="">
+                  <p>Telegram</p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://cf2.oigngns6zvx3.com/bucketimg/7e4ed65c-c6fb-403b-ba13-1275d047c66e.png" class="w-8 h-8 me-5" alt="">
+                  <p>ဧည့်ဝန်ဆောင်မှု</p>
+                </a>
+              </div>
+
+              <div class="bg-gray-700 rounded-xl mx-5 my-2 p-5">
+                <a href="#" class="flex justify-start align-center">
+                  <img src="https://cf2.oigngns6zvx3.com/bucketimg/7e4ed65c-c6fb-403b-ba13-1275d047c66e.png" class="w-8 h-8 me-5" alt="">
+                  <p>APP ကိုဒေါင်းလုဒ်လုပ်ပါ။</p>
+                </a>
+              </div>
+
+            </div>
+            <!-- end sidebar -->
+
+          </div>
+
+          <!-- start banner section -->
+          <img src="https://cf2.oigngns6zvx3.com/bucketimg/d8016cd6-e277-49a5-830b-12bd1b4b8588.jpg" alt="" class="mt-[50px]">
+          <!-- end banner section -->
+
+          <!-- start menu bar -->
+          <div class="bg-gray-700 h-[2.6rem] flex justify-start align-center text-gray-300 text-sm active:text-white rounded-3xl  p-1 mt-3">
+
+            <a href="#" class="w-32 h-8 active:bg-gray-600 rounded-3xl flex justify-center items-center cursor-pointer mx-1">
+              <i class="fa-solid fa-gamepad text-xl pt-1 pe-2"></i>
+              <p>ဂိမ်းအားလုံး</p>
+            </a>
+
+            <a href="#sport" class="w-32 h-8 active:bg-gray-600 rounded-3xl flex justify-center items-center cursor-pointer mx-1">
+              <i class="fa-solid fa-baseball  text-xl pt-1 pe-2"></i>
+              <p class="uppercase">Sport</p>
+            </a>
+
+            <a href="#casino" class="w-32 h-8 active:bg-gray-600 rounded-3xl flex justify-center items-center cursor-pointer mx-1">
+              <i class="fa-solid fa-dice-five text-xl pt-1 pe-2"></i>
+              <p class="uppercase">Live casino</p>
+            </a>
+
+            <a href="#fishing" class="w-32 h-8 active:bg-gray-600 rounded-3xl flex justify-center items-center cursor-pointer mx-1">
+              <i class="fa-solid fa-dice-five text-xl pt-1 pe-2"></i>
+              <p class="uppercase">ငါးဖမ်း</p>
+            </a>
+
+          </div>
+          <!-- end menu bar -->
+
+          <!-- start search box -->
+          <div class="flex justify-start items-center rounded-xl bg-black  border border-gray-700  p-2 mx-2 mt-4">
+            <i class="fa-solid fa-magnifying-glass text-lg text-gray-700 me-4"></i>
+            <input type="search" class="text-sm outline-none border-none bg-black py-2" placeholder="ရှာဖွေ">
+          </div>
+          <!-- end search box -->
+
+          <!-- start sport section -->
+          <div id="sport" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://front-2.thethsdnadagvx.com/bucketimg/c9184757-0a1e-468a-900a-b73a76c00f7c.png" class="w-8 h-8" alt="">
+              <p class="text-2xl uppercase text-lg font-bold">Sport</p>
+            </div>
+
+            <div class="flex justify-center items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/108e4a79-10eb-4aaa-afe7-ec5feb161cd7.jpg" class="w-1/3 h-[13rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/eb07571d-ba7e-497b-ba80-7224b3740a7d.jpg" class="w-1/3 h-[13rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9ee7eb03-db30-4cda-9a30-7228cff9abf6.jpg" class="w-1/3 h-[13rem] rounded-lg px-1" alt="">
+            </div>
+
+          </div>
+          <!-- end sport section -->
+
+          <!-- start PG section -->
+          <div id="pg" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/f8994fae-9170-4a47-b09a-a075146ec0c8.png" class="w-8 h-8" alt="">
+              <p class="text-2xl uppercase text-lg font-bold">pg</p>
+            </div>
+
+            <div class="flex justify-center items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7ef4c73f-9b84-4afb-b71f-5cc2b3911f36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/76641bdc-3e75-48dc-b2ae-5e668fc8c578.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/1e8882be-e476-47cd-8880-c5a150ccee5b.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-center items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7ef4c73f-9b84-4afb-b71f-5cc2b3911f36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/76641bdc-3e75-48dc-b2ae-5e668fc8c578.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/1e8882be-e476-47cd-8880-c5a150ccee5b.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-center items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7ef4c73f-9b84-4afb-b71f-5cc2b3911f36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/76641bdc-3e75-48dc-b2ae-5e668fc8c578.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/1e8882be-e476-47cd-8880-c5a150ccee5b.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+
+            <div class="flex justify-center align-center mt-5">
+              <button type="button" class=" p-3 rounded-xl bg-gray-800 text-sm text-gray-400 font-bold">နောက်ထပ်</button>
+            </div>
+
+          </div>
+          <!-- end PG section -->
+
+          <!-- start slot section -->
+          <div id="slot" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://front-2.thethsdnadagvx.com/bucketimg/a68c8764-ff6b-4878-b767-528553541453.png" class="w-8 h-8 me-2" alt="">
+              <p class="text-2xl uppercase text-lg font-bold">စလော့</p>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9b316820-7de0-4498-b5ec-11caf094be36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7971d3b0-7f46-4247-9f55-b7dd967de803.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/6c2f45c5-12bc-4be5-b60f-4830b9434337.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9b316820-7de0-4498-b5ec-11caf094be36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7971d3b0-7f46-4247-9f55-b7dd967de803.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+
+            <div class="flex justify-center align-center mt-5">
+              <button type="button" class=" p-3 rounded-xl bg-gray-800 text-sm text-gray-400 font-bold">နောက်ထပ်</button>
+            </div>
+
+          </div>
+          <!-- end slot section -->
+
+          <!-- start fishing section -->
+          <div id="fishing" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/f7ca8de0-9e52-49d0-a121-fd2a7c0b4d8c.png" class="w-8 h-8 me-2" alt="">
+              <p class="text-2xl uppercase text-lg font-bold">ငါးဖမ်း</p>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9b316820-7de0-4498-b5ec-11caf094be36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7971d3b0-7f46-4247-9f55-b7dd967de803.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/6c2f45c5-12bc-4be5-b60f-4830b9434337.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9b316820-7de0-4498-b5ec-11caf094be36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7971d3b0-7f46-4247-9f55-b7dd967de803.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/6c2f45c5-12bc-4be5-b60f-4830b9434337.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9b316820-7de0-4498-b5ec-11caf094be36.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/7971d3b0-7f46-4247-9f55-b7dd967de803.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+
+            <div class="flex justify-center align-center mt-5">
+              <button type="button" class=" p-3 rounded-xl bg-gray-800 text-sm text-gray-400 font-bold">နောက်ထပ်</button>
+            </div>
+
+          </div>
+          <!-- end fishing sectin -->
+
+          <!-- start casino section -->
+          <div id="casino" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://front-2.thethsdnadagvx.com/bucketimg/66c8f69f-e80a-43c9-969a-7347eea87898.png" class="w-8 h-8 me-2" alt="">
+              <p class="text-2xl text-lg font-bold">LIVE Casino</p>
+            </div>
+
+            <div class="flex justify-center items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/2a08ffbf-3496-48ab-88b2-56b85e1dd064.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/2b36dfa3-a435-4005-84f5-4e48eae3e999.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9e739b9a-716e-488d-9743-3691fdecaca4.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-center items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/2a08ffbf-3496-48ab-88b2-56b85e1dd064.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/2b36dfa3-a435-4005-84f5-4e48eae3e999.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9e739b9a-716e-488d-9743-3691fdecaca4.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-center items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/2a08ffbf-3496-48ab-88b2-56b85e1dd064.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/2b36dfa3-a435-4005-84f5-4e48eae3e999.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9e739b9a-716e-488d-9743-3691fdecaca4.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+
+          </div>
+          <!-- end casino section -->
+
+          <!-- start card section -->
+          <div id="card" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://front-2.thethsdnadagvx.com/bucketimg/fc66ec67-c5e9-450f-9fac-c0f44b50f4eb.png" class="w-8 h-8 me-2" alt="">
+              <p class="text-2xl text-lg font-bold">ကဒ်ဂိမ်း</p>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/31a05947-e49c-4896-9146-5379b8b09f4d.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/f332fd84-dcab-481b-853e-2d56103c520d.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/cf11864c-3a09-4d91-bdd9-f24ab8ac39c8.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/31a05947-e49c-4896-9146-5379b8b09f4d.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/f332fd84-dcab-481b-853e-2d56103c520d.jpg" class="w-1/3 h-[11rem] rounded-lg px-1" alt="">
+            </div>
+            
+
+          </div>
+          <!-- end card section -->
+
+          <!-- start lottery section -->
+          <div id="lottery" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://front-2.thethsdnadagvx.com/bucketimg/b877f227-1bc3-4d5f-8632-064fd58b3c7f.png" class="w-8 h-8" alt="">
+              <p class="text-2xl uppercase text-lg font-bold">ထီ</p>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/981f7904-6055-4112-abcb-5096e04e9484.jpg" class="w-1/3 h-[13rem] rounded-lg px-1" alt="">
+            </div>
+
+          </div>
+          <!-- end lottery section -->
+
+          <!-- start esport section -->
+          <div id="esport" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://front-2.thethsdnadagvx.com/bucketimg/37fd4a19-c1c1-48ff-816b-2e36db8e499c.png" class="w-8 h-8" alt="">
+              <p class="text-2xl text-lg font-bold">Esport</p>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9598f74d-d564-4844-b6c3-8abc7adf3ece.jpg" class="w-1/3 h-[13rem] rounded-lg px-1" alt="">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/9598f74d-d564-4844-b6c3-8abc7adf3ece.jpg" class="w-1/3 h-[13rem] rounded-lg px-1" alt="">
+            </div>
+
+          </div>
+          <!-- end esport section -->
+
+          <!-- start hen section -->
+          <div id="hen" class="font-serif mt-5">
+
+            <div class="flex justify-start items-center text-gray-400 ms-2">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/345b040d-91f2-4a1d-b1b7-70b2259d7fd5.png" class="w-8 h-8" alt="">
+              <p class="text-2xl uppercase text-lg font-bold">ကြက်တိုက်ခြင်း။</p>
+            </div>
+
+            <div class="flex justify-start items-center mt-4">
+              <img src="https://cf2.oigngns6zvx3.com/bucketimg/0c986ab4-4bce-4a09-a853-f47101f6c107.jpg" class="w-1/3 h-[13rem] rounded-lg px-1" alt="">
+            </div>
+
+          </div>
+          <!-- end hen section -->
+
+          <!-- start contact section -->
+          <div class="flex justify-start bg-gray-900 text-gray-500 text-sm mt-5 pt-5">
+            <div class="w-1/2 font-bold ps-3 text-gray-400">
+              <p>ဂိမ်း</p>
+            </div>
+            <div class="w-1/2">
+              <p class="font-bold text-gray-400">ကူညီပါ</p>
+              <div class="grid grid-cols-1 leading-8">
+                <a href="#">အသင်းအဖွဲ့ရေးရာ</a>
+                <a href="#">ဘုံပြဿနာ</a>
+                <a href="#">လုံခြုံရေးသတိပေးချက်</a>
+                <a href="#">အသင်းအဖွဲ့ရေးရာ</a>
+                <a href="#">ကိုယ်ရေးမူဝါဒ</a>
+              </div>
+            </div>
+          </div>
+          <!-- end contact section -->
+
+          <!-- start logo section -->
+          <div class="flex justify-start items-center mt-5 ms-5">
+            <img src="https://www.iw021.com/int105-1/footer/logo/1.png?1697640961420" class="w-[3rem] h-[3rem] mx-1" alt="">
+            <img src="https://www.iw021.com/int105-1/footer/logo/2.png?1697640961420" class="w-[3rem] h-[3rem] mx-1" alt="">
+            <img src="https://www.iw021.com/int105-1/footer/logo/3.png?1697640961420" class="w-[3rem] h-[3rem] mx-1" alt="">
+            <img src="https://www.iw021.com/int105-1/footer/logo/4.png?1697640961420" class="w-[3rem] h-[3rem] mx-1" alt="">
+            <img src="https://www.iw021.com/int105-1/footer/logo/5.png?1697640961420" class="w-[3rem] h-[3rem] mx-1" alt="">
+            <img src="https://www.iw021.com/int105-1/footer/logo/6.png?1697640961420" class="w-[3rem] h-[3rem] mx-1" alt="">
+            
+          </div>
+          <!-- end logo section -->
+
+          <!-- start adv section -->
+          <div class="text-gray-600 text-sm mt-5 pt-5 mx-5">
+            <p class="font-bold">ကြှနျုပျတို့အကွောငျး</p>
+            <p class="mt-5">ဤဆိုက်သည် စွန့်စားခန်းအတွေ့အကြုံရှိသော ဂိမ်းများကို ပေးသည်။ ကျွန်ုပ်တို့၏ site ကိုအသုံးပြုသူတစ်ဦးဖြစ်လာရန်၊ သင်သည် အနည်းဆုံး အသက် 18 နှစ်ရှိရမည်။ အွန်လိုင်းဂိမ်းကစားခြင်းနှင့်ပတ်သက်၍ သင့်ဒေသဆိုင်ရာဥပဒေများကို ချိုးဖောက်မှုအတွက် ကျွန်ုပ်တို့တွင် တာဝန်မရှိပါ။ တာဝန်သိစွာကစားပြီး ဖိလစ်ပိုင်ရှိ ရေပန်းအစားဆုံး မိုင်းဂိမ်းဖြင့် ပျော်ရွှင်လိုက်ပါ။</p>
+          </div>
+          <!-- end adv section -->
+
+          <!-- start partner section -->
+          <div>
+            <div class="flex justify-center items-center mt-5">
+              <img src="https://www.iw021.com/img/google.0de8c058.png" class="w-[8rem] h-[3.5rem] mx-1" alt="">
+              <img src="https://www.iw021.com/img/evoplay.7e15e0f8.png" class="w-[8rem] h-[3.5rem]" alt="">
+            </div>
+            <div class="flex justify-center items-center mt-5">
+              <img src="https://www.iw021.com/img/google.0de8c058.png" class="w-[8rem] h-[3.5rem] mx-1" alt="">
+              <img src="https://www.iw021.com/img/evoplay.7e15e0f8.png" class="w-[8rem] h-[3.5rem]" alt="">
+            </div>
+            <div class="flex justify-center items-center mt-5">
+              <img src="https://www.iw021.com/img/google.0de8c058.png" class="w-[8rem] h-[3.5rem] mx-1" alt="">
+              <img src="https://www.iw021.com/img/evoplay.7e15e0f8.png" class="w-[8rem] h-[3.5rem]" alt="">
+            </div>
+          </div>
+          <!-- end partner section -->
+
+          <!-- start copyright section -->
+          <div class="mt-5 px-4 text-gray-500 text-sm mb-[10rem]">
+            <p>မူပိုင်ခွင့် © 2019-2023 ဖိလစ်ပိုင်တွင် လူကြိုက်အများဆုံး မြေမြုပ်မိုင်းဂိမ်း။</p>
+          </div>
+          <!-- end copyright section -->
+
+          <!-- start footer menu section -->
+          <footer class="flex justify-center text-center">
+            <div class="fixed bottom-0 w-full md:w-1/2 lg:w-1/2 xl:w-1/3 grid grid-cols-5  bg-gray-900 text-gray-300 text-xs font-bold">
+              <div class="py-3 ps-5 ">
+                <i class="fa-solid fa-gamepad text-lg pt-1 px-1"></i>
+                <p>ဂိမ်း</p>
+              </div>
+              <div class="p-3">
+                <i class="fa-solid fa-share-from-square text-lg pt-1 px-1"></i>
+                <p>မြှင့်တင်ပါ။</p>
+              </div>
+              <div class=" w-[70px] h-auto  grid justify-center items-center bg-blue-500 rounded-full p-3">
+                <i class="fa-solid fa-wallet text-lg pt-1"></i>
+                <p class="text-xs">ငွေသွင်းရန်</p>
+              </div>
+              <div class="p-3">
+                <i class="fa-solid fa-sack-dollar text-lg pt-1 px-1"></i>
+                <p>ဘောနပ်စ်</p>
+              </div>
+              <div class="p-3">
+                <i class="fa-solid fa-download text-lg pt-1 px-1"></i>
+                <p>App</p>
+              </div>
+            </div>
+            
+          </footer>
+          <!-- end footer menu section -->
+
+        </div>
+
+    </div>
+
+    
+      
+    <!-- dropdown js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.7.3/dist/alpine.min.js" defer></script>
+
+    <!-- start  sidebar js -->
+    <script>
+      const toggleButton = document.getElementById('toggleSidebar');
+      const sidebar = document.getElementById('sidebar');
+    
+      toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        sidebar.classList.toggle('hidden');
+       
+      });
+    </script>
+    <!-- end sidebar js -->
+
+</body>
+</html>
